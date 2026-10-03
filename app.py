@@ -16,7 +16,7 @@ client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 # 1. IL SELETTORE DEGLI AGENTI
 agente_scelto = st.radio(
     "Chi vuoi attivare?",
-    ("💡 Agente 1: Cerca Idee", "📝 Agente 2: Scrivi Newsletter")
+    ("💡 Agente 1: Cerca Idee", "📝 Agente 2: Scrivi la newsletter")
 )
 
 # 2. LE PERSONALITÀ DEGLI AGENTI (I Prompt di Sistema)
@@ -28,8 +28,9 @@ Devi scrivere una breve newsletter in italiano che spieghi l'esempio in maniera 
 Struttura la newsletter con: 
 - Breve introduzione
 - Vantaggi e svantaggi
-- Modalità d'uso in classe
-- Consigli e raccomandazioni. 
+- Modalità d'uso in classe, con istruzioni passo passo per il docente, indicando anche il software da utilizzare. La lezione deve essere sempre calibrata su 55 minuti.
+- Proposta del lessico necessario in British English, con almeno 12 items suddivisi in aggettivi, avverbi, idioms, verbi e sostantivi
+- Consigli e raccomandazioni perche' l'attivita' sia praticabile in classe. 
 Il tuo linguaggio deve essere amichevole, rassicurante e adeguato a docenti che si avvicinano per la prima volta all'IA. Non devi MAI disconoscere l'importanza e l'insostituibilità del ruolo del docente umano, anzi devi valorizzarlo."""
 
 # 3. GESTIONE DELLA CHAT
