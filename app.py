@@ -16,7 +16,7 @@ client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 # 1. IL SELETTORE DEGLI AGENTI
 agente_scelto = st.radio(
     "Chi vuoi attivare?",
-    ("💡 Agente 1: Cerca Attività Pratiche PET", "📝 Agente 2: Scrivi Newsletter")
+    ("💡 Agente 1: Cerca attività pratiche PET", "📝 Agente 2: Scrivi la newsletter")
 )
 
 # 2. LE PERSONALITÀ DEGLI AGENTI (I Prompt di Sistema aggiornati)
