@@ -2,8 +2,8 @@ import streamlit as st
 from openai import OpenAI
 
 # Configurazione della pagina
-st.set_page_config(page_title="Team Didattica IA", page_icon="🎓")
-st.title("🎓 Team Didattica ESL & IA")
+st.set_page_config(page_title="Team Didattica IA - Esame PET", page_icon="🎓")
+st.title("🎓 Team Didattica ESL & IA - Preparazione PET")
 st.write("Seleziona con quale agente vuoi parlare!")
 
 # Recupera la chiave segreta dalla cassaforte di Streamlit
@@ -16,21 +16,35 @@ client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 # 1. IL SELETTORE DEGLI AGENTI
 agente_scelto = st.radio(
     "Chi vuoi attivare?",
-    ("💡 Agente 1: Generatore di idee", "📝 Agente 2: Scrivi la newsletter")
+    ("💡 Agente 1: Cerca Attività Pratiche PET", "📝 Agente 2: Scrivi Newsletter")
 )
 
-# 2. LE PERSONALITÀ DEGLI AGENTI (I Prompt di Sistema)
+# 2. LE PERSONALITÀ DEGLI AGENTI (I Prompt di Sistema aggiornati)
 istruzioni_agente_1 = """Sei un esperto di didattica delle lingue straniere (ESL) e intelligenza artificiale. 
-Ispirandoti a fonti autorevoli come Eric Curts, Dan Fitzpatrick e Maestro Roberto, il tuo compito è proporre ESATTAMENTE 5 idee pratiche e sintetiche su come usare piccole attività di IA per migliorare l'apprendimento delle lingue da parte di parlanti non nativi. Sii molto breve, schematico e vai dritto al punto."""
+Ispirandoti a fonti autorevoli come Eric Curts, Dan Fitzpatrick e Maestro Roberto, il tuo compito è proporre ESATTAMENTE 5 attività pratiche, pronte all'uso e rapidamente declinabili in classe.
+Ogni attività deve includere l'utilizzo di un piccolo strumento o funzione di IA.
 
-istruzioni_agente_2 = """Sei un redattore divulgativo esperto in didattica dell'inglese (ESL). L'utente ti indicherà un'idea o un argomento.
-Devi scrivere una breve newsletter in italiano che spieghi l'esempio in maniera chiara. 
+Il tuo target:
+- Studenti: 14-16 anni.
+- Livello: B1 (Preparazione Esame PET - Preliminary English Test).
+- Gli argomenti (topics) devono essere adatti alla loro età e utili per il PET (es. hobby, tecnologia, ambiente, viaggi, vita scolastica).
+
+Per ogni idea, fornisci:
+- Titolo accattivante.
+- Topic affrontato (utile per il PET).
+- Strumento IA suggerito (es. ChatGPT, un generatore di immagini, un correttore, ecc.).
+- Cosa fanno gli studenti (in 2 righe, in modo molto pratico e operativo).
+Sii sintetico, chiaro e orientato all'azione."""
+
+istruzioni_agente_2 = """Sei un redattore divulgativo esperto in didattica dell'inglese (ESL) per la scuola secondaria. L'utente ti indicherà una delle attività pratiche suggerite dall'Agente 1.
+Devi scrivere una breve newsletter in italiano che spieghi quell'attività in maniera chiara ai colleghi docenti. 
+
 Struttura la newsletter con: 
-- Breve introduzione
-- Vantaggi e svantaggi
-- Modalità d'uso in classe, con istruzioni passo passo per il docente, indicando anche il software da utilizzare. La lezione deve essere sempre calibrata su 55 minuti.
-- Proposta del lessico necessario in British English, con almeno 12 items suddivisi in aggettivi, avverbi, idioms, verbi e sostantivi
-- Consigli e raccomandazioni perche' l'attivita' sia praticabile in classe. 
+- Breve introduzione (perché questa attività funziona per i ragazzi di 14-16 anni che preparano il PET).
+- Vantaggi e svantaggi dell'uso dell'IA in questo specifico caso.
+- Modalità d'uso in classe (passo-passo, in modo molto pratico).
+- Consigli e raccomandazioni (come evitare che i ragazzi "copino", come gestire eventuali difficoltà tecniche). 
+
 Il tuo linguaggio deve essere amichevole, rassicurante e adeguato a docenti che si avvicinano per la prima volta all'IA. Non devi MAI disconoscere l'importanza e l'insostituibilità del ruolo del docente umano, anzi devi valorizzarlo."""
 
 # 3. GESTIONE DELLA CHAT
@@ -54,10 +68,8 @@ if prompt_utente:
     # Capisce quali istruzioni usare in base all'agente scelto
     if "Agente 1" in agente_scelto:
         istruzioni = istruzioni_agente_1
-        nome_agente = "Agente 1"
     else:
         istruzioni = istruzioni_agente_2
-        nome_agente = "Agente 2"
 
     # Prepara i messaggi da mandare al "cervello" dell'IA
     messaggi_per_ia = [{"role": "system", "content": istruzioni}]
@@ -73,7 +85,7 @@ if prompt_utente:
         try:
             # Contatta OpenAI
             risposta_ia = client.chat.completions.create(
-                model="gpt-3.5-turbo", # Il modello veloce ed economico di OpenAI
+                model="gpt-3.5-turbo",
                 messages=messaggi_per_ia
             )
             testo_definitivo = risposta_ia.choices[0].message.content
@@ -83,4 +95,4 @@ if prompt_utente:
             st.session_state.messaggi.append({"role": "assistant", "content": testo_definitivo})
             
         except Exception as e:
-            risposta_temporanea.error("Oops! Controlla di aver inserito correttamente l'API Key e di avere credito nel tuo account OpenAI.")
+            risposta_temporanea.error("Oops! Controlla di aver inserito correttamente l'API Key nei Secrets e di avere credito in OpenAI.")
