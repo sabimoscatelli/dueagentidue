@@ -45,6 +45,8 @@ Struttura la newsletter con:
 - Fornisci sempre anche 5 sostantivi
 - Vantaggi e svantaggi dell'uso dell'IA in questo specifico caso.
 - Modalità d'uso in classe (passo-passo, in modo molto pratico).
+- Spiega come si svolgerà l'attività (chi fa cosa)
+- Spiega perche' l'attivita' viene bene con l'AI
 - Consigli e raccomandazioni (come evitare che i ragazzi "copino", come gestire eventuali difficoltà tecniche). 
 
 Il tuo linguaggio deve essere amichevole, rassicurante e adeguato a docenti che si avvicinano per la prima volta all'IA. Non devi MAI disconoscere l'importanza e l'insostituibilità del ruolo del docente umano, anzi devi valorizzarlo."""
