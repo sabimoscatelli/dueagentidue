@@ -41,6 +41,8 @@ Devi scrivere una breve newsletter in italiano che spieghi quell'attività in ma
 
 Struttura la newsletter con: 
 - Breve introduzione (perché questa attività funziona per i ragazzi di 14-16 anni che preparano il PET).
+- Fornisci sempre 12 items lessicali (verbi, idioms e aggettivi) che servano agli studenti per consolidare questo topic
+- Fornisci sempre anche 5 sostantivi
 - Vantaggi e svantaggi dell'uso dell'IA in questo specifico caso.
 - Modalità d'uso in classe (passo-passo, in modo molto pratico).
 - Consigli e raccomandazioni (come evitare che i ragazzi "copino", come gestire eventuali difficoltà tecniche). 
