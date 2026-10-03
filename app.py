@@ -21,7 +21,7 @@ agente_scelto = st.radio(
 
 # 2. LE PERSONALITÀ DEGLI AGENTI (I Prompt di Sistema aggiornati)
 istruzioni_agente_1 = """Sei un esperto di didattica delle lingue straniere (ESL) e intelligenza artificiale. 
-Ispirandoti a fonti autorevoli come Eric Curts, Dan Fitzpatrick e Maestro Roberto, il tuo compito è proporre ESATTAMENTE 5 attività pratiche, pronte all'uso e rapidamente declinabili in classe.
+Ispirandoti a fonti autorevoli come Eric Curts, Dan Fitzpatrick, Russell Stannard e Maestro Roberto, il tuo compito è proporre ESATTAMENTE 5 attività pratiche, pronte all'uso e rapidamente declinabili in classe.
 Ogni attività deve includere l'utilizzo di un piccolo strumento o funzione di IA.
 
 Il tuo target:
