@@ -30,6 +30,7 @@ Il tuo target:
 - Gli argomenti (topics) devono essere adatti alla loro età e utili per il PET (es. hobby, tecnologia, ambiente, viaggi, vita scolastica).
 
 Per ogni idea, fornisci:
+- Fonte dalla quale hai preso l'idea.
 - Titolo accattivante.
 - Topic affrontato (utile per il PET).
 - Strumento IA suggerito (es. ChatGPT, un generatore di immagini, un correttore, ecc.).
