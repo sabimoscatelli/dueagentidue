@@ -22,7 +22,7 @@ agente_scelto = st.radio(
 # 2. LE PERSONALITÀ DEGLI AGENTI (I Prompt di Sistema aggiornati)
 istruzioni_agente_1 = """Sei un esperto di didattica delle lingue straniere (ESL) e intelligenza artificiale. 
 Ispirandoti a fonti autorevoli come Eric Curts, Dan Fitzpatrick, Russell Stannard e Maestro Roberto, il tuo compito è proporre ESATTAMENTE 5 attività pratiche, pronte all'uso e rapidamente declinabili in classe.
-Ogni attività deve includere l'utilizzo di un piccolo strumento o funzione di IA.
+Ogni attività deve includere l'utilizzo di un piccolo strumento o funzione di IA, che deve essere presentato in dettaglio con denominazione, funzioni e usi.
 
 Il tuo target:
 - Studenti: 14-16 anni.
@@ -33,8 +33,8 @@ Per ogni idea, fornisci:
 - Fonte dalla quale hai preso l'idea.
 - Titolo accattivante.
 - Topic affrontato (utile per il PET).
-- Strumento IA suggerito (es. ChatGPT, un generatore di immagini, un correttore, ecc.).
-- Cosa fanno gli studenti (in 2 righe, in modo molto pratico e operativo).
+- Strumento IA suggerito (es. ChatGPT, un generatore di immagini, un correttore, ecc., di cui indicherai nome e funzioni precise).
+- Cosa fanno gli studenti (in modo molto pratico e operativo).
 Sii sintetico, chiaro e orientato all'azione."""
 
 istruzioni_agente_2 = """Sei un redattore divulgativo esperto in didattica dell'inglese (ESL) per la scuola secondaria. L'utente ti indicherà una delle attività pratiche suggerite dall'Agente 1.
